@@ -1,0 +1,355 @@
+@font-face {
+	font-family: 'Gotham Rounded';
+	src: url('fonts/GothamRounded-Bold.woff2') format('woff2'),
+	url('fonts/GothamRounded-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham Rounded';
+	src: url('fonts/GothamRounded-Light.woff2') format('woff2'),
+	url('fonts/GothamRounded-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham Rounded';
+	src: url('fonts/GothamRounded-Book.woff2') format('woff2'),
+	url('fonts/GothamRounded-Book.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	margin-bottom: 50px;
+	margin: 0 auto;
+	font-family: Gotham Rounded, sans-serif;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 20px;
+	padding: 0 40px;
+	grid-template-areas: ". content content content content .";
+}
+
+.content {
+	grid-area: content;
+	max-width: 1000px;
+	width: 100%;
+}
+
+.dark-header {
+	background-color: #005681;
+	color: white;
+	position: relative;
+	z-index: 1;
+}
+
+.brand-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	width: 50px;
+	margin-right: 0.5rem;
+}
+
+.title {
+	font-size: 3rem;
+	text-align: center;
+}
+
+.sub-title {
+	font-size: 1.5rem;
+	text-align: center;
+	font-weight: normal;
+}
+
+
+
+/*Light Header*/
+
+.light-header {
+	color: white;
+	background-color: #00AAFF;
+	padding-top: 450px;
+	margin-top: -500px;
+	position: relative;
+
+}
+
+
+
+.email-form {
+	display: flex;
+	justify-content: center;
+	margin-top: 4rem;
+	margin-bottom: 1rem;
+	font-size: 1.75rem;
+}
+
+.email-form input {
+	background-color: white;
+	color: #005681;
+	border: 2px solid black;
+	border-radius: .5em;
+	padding: 0.5em 1em;
+	margin-right: 1em;
+	outline: none;
+	flex-grow: 1;
+}
+
+.email-form input:focus {
+	background-color: #DCF3FF;
+}
+
+.email-form button {
+	color: #fff;
+	background-color: #111;
+	border: 2px solid #fff;
+	border-radius: .5em;
+	padding: 0.5em 1em;
+	max-width: 250px;
+	cursor: pointer;
+}
+
+.email-form button:hover, .email-form button:focus {
+	background-color: #333;
+}
+
+/* Video and Benifits Section */
+
+.grid-video {
+	margin-top: 50px;
+	align-items: center;
+	grid-template-areas: "video video video benefits benefits benefits";
+}
+
+.grid-video video {
+	grid-area: video;
+	width: 100%;
+	background-color: #929292;
+}
+
+.benefits-section {
+	grid-area: benefits;
+	margin-left: 3rem;
+	justify-self: flex-start;
+	font-size: .3rem;
+}
+
+.benefit {
+	display: flex;
+	align-items: center;
+	font-size: 8em;
+	margin-bottom: 3rem;
+}
+
+.benefit img {
+	height: .8em;
+	margin-right: 2rem;
+}
+
+/*Grid Benefit Details Section*/
+
+.grid-benefit-detail {
+	margin-top: 4rem;
+}
+
+.benefit-detail {
+	grid-column: span 2;
+	margin: 2rem;
+}
+
+.benefit-detail-title {
+	text-align: center;
+	font-size: 1.75rem;
+	color: #333;
+	margin-bottom: 2rem;
+}
+
+.benefit-detail-text {
+	font-size: 1.5rem;
+	color: #444;
+	font-weight: lighter;
+}
+
+
+/*Responsive BreakPoint*/
+
+@media (max-width: 1200px) {
+	.grid {
+		grid-template-columns: 1fr;
+		grid-template-areas: "content";
+	}
+
+	.grid-video{
+		grid-template-columns: 1fr;
+		grid-template-areas: "video" "benefits";
+	}
+
+	.grid-video video {
+		justify-self: center;
+	}
+
+	.benefits-section {
+		margin-top: 2rem;
+		justify-self: center;
+		margin-left: 0;
+	}
+
+	.grid-benefit-detail {
+		grid-template-columns: repeat(6 ,1fr);
+	}
+}
+
+@media (max-width: 1070px) {
+
+	.grid-benefit-detail {
+		grid-template-columns: 1fr;
+		margin-top: 1rem;
+	}
+
+	.benefit-detail {
+		grid-column: 0;
+		margin: 2rem;
+	}
+}
+
+@media (max-width: 800px) {
+	.email-form {
+		flex-direction: column;
+	}
+
+	.email-form button {
+		max-width: initial;
+		width: 100%;
+	}
+
+	.email-form input{
+		margin-right: 0;
+		margin-bottom: 10px;
+		max-width: 100%;
+	}
+
+	.benefit {
+		font-size: 2rem;
+	}
+
+	.benefit img {
+		margin-right: 1rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.grid {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+	.brand-name {
+		display: none;
+	}
+
+	.logo {
+		margin-top: 1rem;
+	}
+
+	.email-form {
+		margin-top: 4rem;
+		font-size: 1rem;
+	}
+
+	.benefit {
+		font-size: 1.25rem;
+	}
+
+	.benefit img {
+		margin-right: .5rem;
+	}
+
+	.benefit-detail-title {
+		font-size: 1.25rem;
+	}
+
+	.benefit-detail-text {
+		font-size: 1.15rem;
+		text-align: center;
+	}
+
+	.benefit-detail {
+		margin: 1rem;
+	}
+}
+
+/*Style For SVG*/
+/*Dark Wave SVG*/
+.dark-wave-divider {
+	background-image: url("images/dark-wave.svg");
+	bottom: 0px;
+    left: 0;
+    width: 100%;
+	height: 150px;
+	position: relative;
+	z-index: 1;
+}
+
+.dark-wave-divider .shape-fill {
+    fill: #005681;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .dark-wave-divider{
+        height: 135px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .dark-wave-divider{
+        height: 50px;
+    }
+}
+
+
+/*light Wave SVG*/
+
+.light-wave-divider {
+	background-image: url("images/light-wave.svg");
+	bottom: 0px;
+    left: 0;
+    width: 100%;
+	height: 150px;
+	position: relative;
+    transform: rotate(360deg);
+}
+
+.light-wave-divider .shape-fill {
+    fill: #00AAFF;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .light-wave-divider  {
+        /*width: calc(132% + 1.3px);*/
+        height: 135px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .light-wave-divider {
+        /*width: calc(132% + 1.3px);*/
+        height: 50px;
+    }
+}

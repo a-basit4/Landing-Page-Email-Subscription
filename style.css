@@ -138,6 +138,7 @@ body {
 }
 
 .benefits-section {
+	background-color: #000;
 	grid-area: benefits;
 	margin-left: 3rem;
 	justify-self: flex-start;
